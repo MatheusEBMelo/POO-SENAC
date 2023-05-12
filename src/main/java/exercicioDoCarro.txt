@@ -1,0 +1,69 @@
+public class Carro {
+    
+    private String placa;
+    private int numChassi;
+    private double velocidade;
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public int getNumChassi() {
+        return numChassi;
+    }
+
+    public void setNumChassi(int numChassi) {
+        this.numChassi = numChassi;
+    }
+
+    public Double getVelocidade() {
+        return velocidade;
+    }
+
+    public void setVelocidade(double velocidade) {
+        this.velocidade = velocidade;
+    }
+    
+    public void acelerar(double x){
+        double newvelocidade = velocidade + x;
+        
+        if(newvelocidade>=0 && newvelocidade<=180 ){
+            velocidade= newvelocidade;
+            System.out.println("Velocidade atual: " + x);
+        } else{
+             System.out.println("Velocidade invalida!");
+        }
+        
+    }
+    
+    public void imprimirCarro(){
+        System.out.println("=============================");
+        System.out.println("=== Placa: " + getPlaca());
+        System.out.println("=== Chassi: " + getNumChassi());
+        System.out.println("=== Velocidade anterior: " + getVelocidade() + "Km/h");
+        System.out.println("=============================");
+    }
+}
+
+
+
+
+public class Aula04 {
+
+    public static void main(String[] args) {
+   
+        Carro oCorcel = new Carro();
+        oCorcel.setPlaca("BBB 1951");
+        oCorcel.setNumChassi(999999999);
+        oCorcel.setVelocidade(90);
+        
+        oCorcel.acelerar(-200);
+        oCorcel.imprimirCarro();
+        
+        
+    }
+}
